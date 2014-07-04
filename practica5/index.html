@@ -1,0 +1,73 @@
+<html>
+  <head>
+  	<script src="js/bootstrap.min.js"></script>
+  	<script>
+  		$(document).ready( 
+  			function(){
+  			var mensaje = ":O Ohh!, borraste el titulo";
+  			alert($('#elemento1').css('fontSize'));
+  			$('#elemento1').css('fontSize','100px');
+  			$('#elemento1').css('color','blue');
+  			alert($('#elemento1').css('fontSize'));
+  			$('#elemento1').hide('slow');
+  			$('#elemento1').show('slow');
+  			$('#elemento1').click(
+  				function(){
+  					$(this).hide('slow');
+  					alert(mensaje);
+  				}
+  				)
+  			
+  			$('#boton').click(
+  				function(){
+  					var v1= parseInt($('#n1').val());
+  					var v2=parseInt($('#n2').val());
+  					var res =v1+v2;
+  					alert(res);
+  				}
+
+  				)
+  			$('#boton2').click(
+  				function(){
+  					var v3= parseInt($('#n3').val());
+  					var v4=parseInt($('#n4').val());
+  					var res =v3-v4;
+  					alert(res);
+  				}
+
+  				)
+  		});
+  			
+  			
+  	</script>
+
+  </head>
+  <body>
+  	<div id="container" class="elemento2">
+  		<h1 id="titulo">
+          <p class="parrafo" id="elemento1">Hola mundo!</p>
+  		</h1>
+  	<div>
+  		<h1 class="titulo">Hola</h1>
+  		<h2 class="titulo">Adios</h2>
+  	</div>
+  	<div class="form-group">
+          <label for="n1">Suma: </label>
+          <input type="text" class="n1"  name="n1" id="n1" placeholder="Ej. 1" ><label hspace="10px">  +  </label>
+          <input hspace="10px" type="text" class="n2"  name="n2" id="n2" placeholder="Ej. 2" >
+          <button type="submit" class="boton" id="boton">Calcula</button>
+    </div>
+    <div class="form-group">
+    	<label for="n1">Resta: </label>
+          <input type="text" class="n3"  name="n3" id="n3" placeholder="Ej. 1" ><label hspace="10px">  -  </label>
+          <input hspace="10px" type="text" class="n4"  name="n4" id="n4" placeholder="Ej. 2" >
+          
+          <button type="submit" class="boton2" id="boton2">Calcula</button>
+    </div>
+
+
+
+  	</div>
+
+  </body>
+</html>
