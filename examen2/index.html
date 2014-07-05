@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Examen II</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready
+        (
+        function()
+          {
+            //100px
+             $('#formus').hide('fast');
+
+             $( "#boton" ).click(function() 
+              {
+                $( "#formus" ).show(3000); 
+                $( "#TipoI" ).hide('fast');
+              });
+             $( "#bJugador" ).click(function() 
+              {
+                 $( "#TipoI" ).show('fast');
+              $( "#Jugador" ).show(3000); 
+                $( "#Entrenador" ).hide('fast');
+              });
+             
+              
+
+             $( "#bEntrenador" ).click(function() {
+              $( "#TipoI" ).show('fast');
+              $( "#Entrenador" ).show(3000); 
+                $( "#Jugador" ).hide('fast');
+                });
+
+             
+          }
+        );  
+    </script>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Examen 2</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="form">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Contrase&ntilde;a" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Registro</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+    <br><br><br><br>
+
+    <div id="cointainer" class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Examen 2</h1>
+        </div>
+        <div class="col-md-6">
+          <h5>5 de Julio 2014</h5>
+        </div>
+      </div>
+      <br><br>
+      <div class="row" vspace="100px">
+        <div class="col-md-12" hspace="100px">
+          <button type="button" class="btn btn-primary" id="boton">Ver formularios</button>
+          
+
+        </div>
+        <hr>
+      </div>
+
+      <div class="container" id="formus">
+        <div class="formus">
+
+       <div class="col-md-4">
+          <h2 align="center">Equipo</h2>
+          <form method="POST" action=""> 
+      
+      <label for="Continente">Continente </label>
+      <select name="Continente" required>
+          <option value=""></option>
+          <option value="africa">Africa</option>
+          <option value="america">America</option>
+          <option value="asia">Asia</option>
+          <option value="europa">Europa</option>
+          <option value="oceania">Oceania</option>
+    </select>
+    <br>
+
+    <label for="Continente">Pais </label>
+      <select name="Continente" required>
+          <option value=""></option>
+          <option value="ale">Alemania</option>
+          <option value="arg">Argentina</option>
+          <option value="argel">Argelia</option>
+          <option value="aus">Australia</option>
+          <option value="bel">Belgica</option>
+          <option value="bos">Bosnia y Herzegovina</option>
+          <option value="bra">Brasil</option>
+          <option value="cam">Camerun</option>
+          <option value="chi">Chile</option>
+          <option value="col">Colombia</option>
+          <option value="cos">Costa de Marfil</option>
+    </select>
+
+    <br/>
+
+        <label for="id_escudo">Escudo</label>
+      <input type="file" id="id_escudo" name="escudo" required>
+      <br>
+
+      <br/>
+
+        <label for="id_uniforme">Uniforme</label>
+      <input type="file" id="id_uniforme" name="uniforme" required>
+      <br>
+
+
+    <label for="id_nombre">Nombre </label>
+      <input type="text" id="id_nombre" name="id_nombre" required>
+      <br/>
+      
+        <input type="submit" value="Guardar" required>
+
+
+      
+
+    </form>
+
+       </div>
+       <div class="col-md-4">
+        <div id="integrante">
+        <div class="bg-info">
+          <h2 align="center">Integrante</h2>
+          <div class="form-group">
+          <label for="nombre">Nombre: </label>
+          <input type="text" class="form-control"  name="nombre" id="nombre" placeholder="Ej. Rafa" >
+          <label for="apellido">Apellido: </label>
+
+          <input type="text" class="form-control"  name="apellido" id="apellido" placeholder="Ej. Marquez" >
+
+        </div>
+        <div class="form-group">
+          <label for="edad">Edad: </label>
+          <input type="text" class="form-control"  name="edad" id="edad" placeholder="Ej. 20" >
+          <label for="peso">Peso: </label>
+          <input type="text" class="form-control"  name="peso" id="peso" placeholder="Ej. 70" >
+          <label for="peso">Peso: </label>
+          <input type="text" class="form-control"  name="estatura" id="estatura" placeholder="Ej. 1.80" >
+
+
+        </div>
+          <div class="form-group">
+            <label for="foto">Selecciona una foto:</label>
+            <input type="file" id="foto" name="foto">
+            
+          </div>
+       </div>
+       <div class="bg-success" id="TipoI">
+          <div class="Jugador">
+            <div class="form-group">
+          <label for="edad">N&uacute;mero: </label>
+          <input type="text" class="form-control"  name="edad" id="edad" placeholder="Ej. 20" >
+          <label for="pos">Posici&oacute;n: </label>
+          <select class="form-control" id="pos" name="pos" required>
+                    <option>posici&oacute;n</option>
+                    <option value="del">Delantero</option>
+                    <option value="por">Portero</option>
+                    <option value="def">Defensa</option>
+                    <option value="med">Medio</option>
+                    
+                  </select>
+
+
+          </div>
+          <div class="Entrenador">
+            <select class="form-control" id="idpais" name="idpais" required>
+                    <option>Pais de procedencia</option>
+                    <option value="1">Brasil</option>
+                    <option value="2">EEUU</option>
+                    <option value="3">Francia</option>
+                    <option value="4">Nigeria</option>
+                  </select>
+
+          </div>
+       </div>
+       </div>
+       </div>
+       </div>
+       <div class="col-md-4">
+        <div class="bg-info">
+
+          <h2 align="center">Tipo de integrante</h2>
+          <br>
+          <div class="form-group">
+          <label for="idcontinente">Seleccione el tipo de Integrante: </label>
+          <button  id="bJugador">Jugador</button>
+          <button  id="bEntrenador">Entrenador</button>
+            <br>
+            
+          </div>
+        </div>
+        </div>
+
+
+       </div>
+       </div>
+      </div>
+
+
+    </div>
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

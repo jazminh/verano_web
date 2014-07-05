@@ -1,8 +1,11 @@
 <html>
   <head>
+    
   	<script src="js/bootstrap.min.js"></script>
+    
   	<script>
   		$(document).ready( 
+
   			function(){
   			var mensaje = ":O Ohh!, borraste el titulo";
   			alert($('#elemento1').css('fontSize'));
@@ -34,8 +37,67 @@
   					var res =v3-v4;
   					alert(res);
   				}
-
   				)
+        function muestraOculta(id) {
+          var elemento = document.getElementById('contenidos_'+id);
+          var enlace = document.getElementById('enlace_'+id);
+         
+          if(elemento.style.display == "" || elemento.style.display == "block") {
+            elemento.style.display = "none";
+            enlace.innerHTML = 'Mostrar contenidos';
+          }
+          else {
+            elemento.style.display = "block";
+            enlace.innerHTML = 'Ocultar contenidos';
+          }
+        }
+
+          
+
+
+        var numero = prompt("Introduce un numero entero");
+ 
+        var resultado = parImpar(numero);
+        alert("El numero "+numero+" es "+resultado);
+         
+        function parImpar(numero) {
+          if(numero % 2 == 0) {
+            return "par";
+          }
+          else {
+            return "impar";
+          }
+        }//fin de la funcion
+        var cadena = prompt("Introduce una cadena");
+        var fin = info(cadena);
+        
+        alert(fin);
+        function info(cadena) {
+ 
+        var resul = "La cadena \""+cadena+"\" ";
+       
+        // Comprobar mayúsculas y minúsculas
+        if(cadena == cadena.toUpperCase()) {
+          resul += " esta formada solo por mayusculas";
+
+        }
+        else if(cadena == cadena.toLowerCase()) {
+          resul += " esta formada solo por minusculas";
+        }
+        else {
+          result += " esta formada por mayusculas y minusculas";
+        }
+       
+        return resul;
+      }
+
+       
+      
+
+
+
+
+
   		});
   			
   			
@@ -63,6 +125,14 @@
           <input hspace="10px" type="text" class="n4"  name="n4" id="n4" placeholder="Ej. 2" >
           
           <button type="submit" class="boton2" id="boton2">Calcula</button>
+    </div>
+    <div>
+      <p id="contenidos_1"> Luego al tiempo aquel momento en que mi mundo se paraba entre tus labios solo para revivir derretirme una vez mas mirando tus ojos negros tengo ganas de ser aire y me respires para siempre pues no tengo nada que perder. 
+      Todo el tiempo estoy pensando en ti, en el brillo del sol en un rincon del cielo. Todo el tiempo estoy pensando en ti en el eco del mar que retumbo en tus ojos y te soñe...
+        
+
+      </p>
+      <a id="enlace_1" href="#" onclick="muestraOculta('1'); return false;">Ocultar</a>
     </div>
 
 
