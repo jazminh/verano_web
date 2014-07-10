@@ -142,11 +142,16 @@
                                         <div class="form-group">
                                             <label class="col-lg-3 control-label">Fecha creacion  </label>
                                             <div class="col-lg-6">
-                                            <input type="date" id="fecha_creacion" name="fecha_creacion">
+                                            <div class='input-group date' id='datetimepicker4'>
+                                                <input type='text' class="form-control" />
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span>
+                                                </span>
+                                            </div>
+                                            </span>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-lg-3 control-label">Fecha creacion  </label>
+                                            <label class="col-lg-3 control-label">Archivo (pdf)  </label>
                                             <div class="col-lg-6">
                                             <input type="file" id="archivo_pdf" name="archivo_pdf">
                                             </div>
@@ -174,8 +179,14 @@
                                       <div class="form-group">
                                             <label class="col-lg-3 control-label">Fecha  </label>
                                             <div class="col-lg-6">
-                                            <input type="date" id="fecha" name="fecha">
+                                            
+                                              <div class='input-group date' id='datetimepicker1'>
+                                                  <input type='text' class="form-control" />
+                                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                                  </span>
+                                              </div>
                                             </div>
+                                            
                                       </div>
                                       <div class="form-group">
                                             <label class="col-lg-3 control-label">Volumen </label>
@@ -242,13 +253,13 @@
     <script type="text/javascript" src="js/bootstrap-datetimepicker.es.js"></script>
     <script type="text/javascript" src="js/bootstrapValidator.js"></script>
 
-<script src="js/bootstrapValidator.min.js"></script>
-    <script type="text/javascript" src="js/bootstrapValidator.js"></script>
+    <script src="js/bootstrapValidator.min.js"></script>
+  
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script src="js/highlight.pack.js"></script>
-<script src="js/bootstrap.min.js"></script>
+
 <script src="js/bootstrapValidator.min.js"></script>
 
     <script>
@@ -292,17 +303,16 @@ $(document).ready(function() {
     });
 
   $(function () {
-                $('#datetimepicker4').datetimepicker({
+                $('#datetimepicker1').datetimepicker({
                     language: 'es',
-                    pickDate: false
+                    
                 });
             });
 });
 </script>
 
-              <script type="text/javascript">
-            
-        </script>
+
+              
 
         <script type="text/javascript">
             $(function () {
