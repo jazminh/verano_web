@@ -52,7 +52,7 @@ class Usuario extends Modelo{
     }
 
     public function get_password(){
-        return $this->baja;
+        return $this->password;
     }
     
     public function set_password($valor){

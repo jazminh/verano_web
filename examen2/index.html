@@ -10,10 +10,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
     <script>
-      $(document).ready
-        (
-        function()
-          {
+      $(document).ready(function(){
             //100px
              $('#formus').hide('fast');
 
@@ -22,24 +19,24 @@
                 $( "#formus" ).show(3000); 
                 $( "#TipoI" ).hide('fast');
               });
-             $( "#bJugador" ).click(function() 
-              {
-                 $( "#TipoI" ).show('fast');
-              $( "#Jugador" ).show(3000); 
-                $( "#Entrenador" ).hide('fast');
+
+
+             $( "#bJugador" ).click(function(){
+                 
+                 $( "#Jugador" ).show(3000); 
+                 $( "#Entrenador" ).hide('fast');
               });
              
               
 
-             $( "#bEntrenador" ).click(function() {
-              $( "#TipoI" ).show('fast');
-              $( "#Entrenador" ).show(3000); 
-                $( "#Jugador" ).hide('fast');
-                });
+              $("#bEntrenador" ).click(function() {
+                
+                $("#Entrenador" ).show(3000); 
+                $("#Jugador" ).hide('fast');
+              });
 
              
-          }
-        );  
+          });  
     </script>
 
 
@@ -154,80 +151,75 @@
 
     </form>
 
-       </div>
-       <div class="col-md-4">
-        <div id="integrante">
-        <div class="bg-info">
+  </div>
+
+  <div class="col-md-4">
+    <div id="integrante">
+       <div class="bg-info">
           <h2 align="center">Integrante</h2>
-          <div class="form-group">
-          <label for="nombre">Nombre: </label>
-          <input type="text" class="form-control"  name="nombre" id="nombre" placeholder="Ej. Rafa" >
-          <label for="apellido">Apellido: </label>
-
-          <input type="text" class="form-control"  name="apellido" id="apellido" placeholder="Ej. Marquez" >
-
-        </div>
-        <div class="form-group">
-          <label for="edad">Edad: </label>
-          <input type="text" class="form-control"  name="edad" id="edad" placeholder="Ej. 20" >
-          <label for="peso">Peso: </label>
-          <input type="text" class="form-control"  name="peso" id="peso" placeholder="Ej. 70" >
-          <label for="peso">Peso: </label>
-          <input type="text" class="form-control"  name="estatura" id="estatura" placeholder="Ej. 1.80" >
-
-
-        </div>
-          <div class="form-group">
-            <label for="foto">Selecciona una foto:</label>
-            <input type="file" id="foto" name="foto">
-            
-          </div>
-       </div>
-       <div class="bg-success" id="TipoI">
-          <div class="Jugador">
             <div class="form-group">
-          <label for="edad">N&uacute;mero: </label>
-          <input type="text" class="form-control"  name="edad" id="edad" placeholder="Ej. 20" >
-          <label for="pos">Posici&oacute;n: </label>
-          <select class="form-control" id="pos" name="pos" required>
-                    <option>posici&oacute;n</option>
-                    <option value="del">Delantero</option>
-                    <option value="por">Portero</option>
-                    <option value="def">Defensa</option>
-                    <option value="med">Medio</option>
-                    
-                  </select>
+              <label for="nombre">Nombre: </label>
+              <input type="text" class="form-control"  name="nombre" id="nombre" placeholder="Ej. Rafa" >
+              <label for="apellido">Apellido: </label>
 
+              <input type="text" class="form-control"  name="apellido" id="apellido" placeholder="Ej. Marquez" >
 
+            </div>
+            <div class="form-group">
+              <label for="edad">Edad: </label>
+              <input type="text" class="form-control"  name="edad" id="edad" placeholder="Ej. 20" >
+              <label for="peso">Peso: </label>
+              <input type="text" class="form-control"  name="peso" id="peso" placeholder="Ej. 70" >
+              <label for="peso">Peso: </label>
+              <input type="text" class="form-control"  name="estatura" id="estatura" placeholder="Ej. 1.80" >
+            </div>
+            <div class="form-group">
+              <label for="foto">Selecciona una foto:</label>
+              <input type="file" id="foto" name="foto">
+              
+            </div>
+        </div>
+        <div class="bg-success" >
+          <div id="Jugador">
+            <div class="form-group">
+              <label for="edad">N&uacute;mero: </label>
+              <input type="text" class="form-control"  name="edad" id="edad" placeholder="Ej. 20" >
+              <label for="pos">Posici&oacute;n: </label>
+              <select class="form-control" id="pos" name="pos" required>
+                        <option>posici&oacute;n</option>
+                        <option value="del">Delantero</option>
+                        <option value="por">Portero</option>
+                        <option value="def">Defensa</option>
+                        <option value="med">Medio</option>
+                        
+              </select>
+            </div>
           </div>
-          <div class="Entrenador">
+          <div id="Entrenador">
             <select class="form-control" id="idpais" name="idpais" required>
                     <option>Pais de procedencia</option>
                     <option value="1">Brasil</option>
                     <option value="2">EEUU</option>
                     <option value="3">Francia</option>
                     <option value="4">Nigeria</option>
-                  </select>
-
-          </div>
+            </select>
+          </div> 
        </div>
-       </div>
-       </div>
-       </div>
-       <div class="col-md-4">
-        <div class="bg-info">
-
-          <h2 align="center">Tipo de integrante</h2>
+  </div>
+</div>
+<div class="col-md-4">
+  <div class="bg-info">
+    <h2 align="center">Tipo de integrante</h2>
+    <br>
+      <div class="form-group">
+        <label for="idcontinente">Seleccione el tipo de Integrante: </label>
+        <button  id="bJugador">Jugador</button>
+        <button  id="bEntrenador">Entrenador</button>
           <br>
-          <div class="form-group">
-          <label for="idcontinente">Seleccione el tipo de Integrante: </label>
-          <button  id="bJugador">Jugador</button>
-          <button  id="bEntrenador">Entrenador</button>
-            <br>
             
-          </div>
-        </div>
-        </div>
+      </div>
+  </div>
+</div>
 
 
        </div>
@@ -235,7 +227,7 @@
       </div>
 
 
-    </div>
+    
 
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
