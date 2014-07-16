@@ -27,11 +27,8 @@
             <label for="Nombre">Nombre del estadio: </label>
             <input type="text" class="form-control"  name="Nombre" id="Nombre" placeholder="Ej. Mineirao" >
             <label for="idciudad">Ciudad: </label>
-            <select class="form-control">
-              <option></option>
-
-              
-            </select>
+            <input type="text" class="form-control"  name="idciudad" id="idciudad" placeholder="Ej. Mineirao" >
+            
           </div>
           
           <br>

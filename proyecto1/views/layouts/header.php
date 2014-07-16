@@ -39,7 +39,7 @@
         <li>
           <a href="#">Getting started</a>
         </li>
-        <li class="dropdown open">
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formularios <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="../equipo/equipo.php">Equipo</a></li>
@@ -51,15 +51,13 @@
             <li><a href="../posicion/posicion.php">Posicion</a></li>
           </ul>
         </li>
-        <li>
-          <a href="#">Components</a>
-        </li>
-        <li>
-          <a href="#">JavaScript</a>
-        </li>
-        <li class="active">
-          <a href="#">Customize</a>
-        </li>
+            <li><a href="../equipo/equipo.php">Equipo</a></li>
+            <li><a href="../estadio/estadio.php">Estadio</a></li>
+            <li><a href="../ciudad/ciudad.php">Ciudad</a></li>
+            <li><a href="../continente/continente.php">Continente</a></li>
+            <li><a href="../pais/pais.php">Pais</a></li>
+            <li><a href="../integrante/integrante.php">Integrante</a></li>
+            <li><a href="../posicion/posicion.php">Posicion</a></li>
       </ul>
     </nav>
   </div>

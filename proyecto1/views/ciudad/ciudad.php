@@ -9,9 +9,8 @@
   include ('../layouts/header.php');
 
   if (isset($_POST['nombre'])){
-  	echo "<pre>";
- 	 print_r($_POST);
-  	echo"</pre>";
+    $ciudadC=new CiudadController();
+    $ciudadC->insertaCiudad($_POST);
 
 	}
 

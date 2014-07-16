@@ -1,22 +1,24 @@
 <?php
 
-class Ciudad extends Modelo{
-    public $nombre_tabla = 'ciudad';
-    public $pk = 'idciudad';
+class Posicion extends Modelo{
+    public $nombre_tabla = 'posicion';
+    public $pk = 'idposicion';
     
     
     public $atributos = array(
-        'Nombre'=>array(),
+        'nombre'=>array(),
+        'abreviatura'=>array(),
         
     );
     
     public $errores = array( );
     
-    private $Nombre;
+    private $nombre;
+    private $abreviatura;
     
        
     
-    function Ciudad(){
+    function Posicion(){
         parent::Modelo();
     }
     
@@ -29,11 +31,11 @@ class Ciudad extends Modelo{
     }
     
     
-    public function get_Nombre(){
-        return $this->Nombre;
+    public function get_nombre(){
+        return $this->nombre;
     } 
 
-    public function set_Nombre($valor){
+    public function set_nombre($valor){
 
         $er = new Er();
         
@@ -41,19 +43,23 @@ class Ciudad extends Modelo{
             $this->errores[] = "Este nombre (".$valor.") no es valido";
         }
 
-        $rs = $this->consulta_sql("select * from ciudad where Nombre = '$valor'");
+        $rs = $this->consulta_sql("select * from posicion where nombre = '$valor'");
         $rows = $rs->GetArray();
         
         if(count($rows) > 0){
             $this->errores[] = "Este nombre (".$valor.") ya esta registrado"; 
         }else{
-            $this->Nombre = $valor;
+            $this->nombre = $valor;
         }
     }
 
-    
-    
+    public function get_abreviacion(){
+        return $this->abreviacion;
+    } 
 
+    public function set_abreviacion(){
+     $this->abreviacion=$valor;
+    } 
 
     
     
