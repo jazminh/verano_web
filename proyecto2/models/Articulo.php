@@ -154,7 +154,7 @@ class Articulo extends Modelo{
             $this->errores[] = "Este id (".$valor.") no es valido";
         }
 
-        $rs = $this->consulta_sql("select * from equipo where id_status = '$valor'");
+        $rs = $this->consulta_sql("select * from articulo where id_status = '$valor'");
         $rows = $rs->GetArray();
         
         if(count($rows) > 0){

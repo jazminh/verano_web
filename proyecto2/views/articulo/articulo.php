@@ -25,37 +25,37 @@
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Nombre articulo </label>
                       <div class="col-lg-6">
-                          <input type="text" class="form-control" name="username" id="nombre" />
+                          <input type="text" class="form-control username" name="nombre" id="nombre" />
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Resumen </label>
                       <div class="col-lg-6">
-                          <textarea type="text" class="form-control" name="texto" id="resumen" ></textarea>
+                          <textarea type="text" class="form-control" name="resumen" id="resumen" ></textarea>
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Abstract </label>
                       <div class="col-lg-6">
-                          <textarea type="text" class="form-control" name="texto" id="abstract" ></textarea>
+                          <textarea type="text" class="form-control" name="abstract" id="abstract" ></textarea>
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Introduccion </label>
                       <div class="col-lg-6">
-                          <textarea type="text" class="form-control" name="texto" id="introduccion" ></textarea>
+                          <textarea type="text" class="form-control" name="introduccion" id="introduccion" ></textarea>
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Metodologia </label>
                       <div class="col-lg-6">
-                          <textarea type="text" class="form-control" name="texto" id="metodologia" ></textarea>
+                          <textarea type="text" class="form-control" name="metodologia" id="metodologia" ></textarea>
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Contenido </label>
                       <div class="col-lg-6">
-                          <textarea type="text" class="form-control" name="texto" id="contenido" ></textarea>
+                          <textarea type="text" class="form-control" name="contenido" id="contenido" ></textarea>
                       </div>
                   </div>
                   <div class="form-group">

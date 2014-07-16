@@ -27,8 +27,10 @@
 			
 			if(count($articulo->errores)>0){
 				print_r($articulo->errores);
+				die();
 			}
-			die();
+			$articulo->inserta($articulo->get_atributos());
+
 		}
 
 	}

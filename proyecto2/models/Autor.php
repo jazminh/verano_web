@@ -1,8 +1,8 @@
 <?php
 
 class Autor extends Modelo{
-    public $nombre_tabla = 'integrante';
-    public $pk = 'idintegrante';
+    public $nombre_tabla = 'autor';
+    public $pk = 'id_autor';
     
     
     public $atributos = array(
@@ -57,11 +57,11 @@ class Autor extends Modelo{
             $this->nombre = $valor;
         }
     }
-    public function get_apellido(){
-        return $this->apellido;
+    public function get_apellidos(){
+        return $this->apellidos;
     } 
 
-    public function set_apellido($valor){
+    public function set_apellidos($valor){
 
         $er = new Er();
         
@@ -69,7 +69,7 @@ class Autor extends Modelo{
             $this->errores[] = "Este apellido (".$valor.") no es valido";
         }
 
-        $rs = $this->consulta_sql("select * from autor where apellido = '$valor'");
+        $rs = $this->consulta_sql("select * from autor where apellidos = '$valor'");
         $rows = $rs->GetArray();
         
         if(count($rows) > 0){
@@ -79,11 +79,11 @@ class Autor extends Modelo{
         }
     }
 
-    public function get_peso(){
+    public function get_email(){
         return $this->email;
     } 
 
-    public function set_peso($valor){
+    public function set_email($valor){
 
         $er = new Er();
         

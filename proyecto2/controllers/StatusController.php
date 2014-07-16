@@ -11,11 +11,13 @@
 		 	print_r($datos);
 		  	echo"</pre>";
 			$status = new Status();
-			$status->set_nombre($datos['status']);
+			$status->set_status($datos['status']);
 			if(count($status->errores)>0){
 				print_r($status->errores);
+				die();
 			}
-			die();
+			
+			$status->inserta($status->get_atributos());
 		}
 
 	}

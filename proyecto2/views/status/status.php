@@ -8,7 +8,7 @@
   include ('../../libs/Er.php');
   include ('../layouts/header.php');
 
-  if (isset($_POST['nombre'])){
+  if (isset($_POST['status'])){
   	
   	$statusC=new StatusController();
   	$statusC->insertaStatus($_POST);
@@ -25,7 +25,7 @@
             <div class="form-group">
                   <label class="col-lg-3 control-label">Status </label>
                   <div class="col-lg-6">
-                      <input type="text" class="form-control" name="username" id="status" />
+                      <input type="text" class="form-control username" name="status" id="status" />
                   </div>
             </div>
 

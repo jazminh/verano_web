@@ -17,8 +17,11 @@
 			
 			if(count($autor->errores)>0){
 				print_r($autor->errores);
+				die();
 			}
-			die();
+
+			
+			$autor->inserta($autor->get_atributos());
 		}
 
 	}

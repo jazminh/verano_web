@@ -2,7 +2,7 @@
 
 class Revista extends Modelo{
     public $nombre_tabla = 'revista';
-    public $pk = 'idrevista';
+    public $pk = 'id_revista';
     
     
     public $atributos = array(
@@ -77,20 +77,9 @@ class Revista extends Modelo{
 
     public function set_portada($valor){
 
-        $er = new Er();
         
-        if ( !$er->valida_nombre($valor) ){
-            $this->errores[] = "Este portada (".$valor.") no es valido";
-        }
-
-        $rs = $this->consulta_sql("select * from revista where portada = '$valor'");
-        $rows = $rs->GetArray();
-        
-        if(count($rows) > 0){
-            $this->errores[] = "Este portada (".$valor.") ya esta registrado"; 
-        }else{
             $this->portada = $valor;
-        }
+        
     }
 
 

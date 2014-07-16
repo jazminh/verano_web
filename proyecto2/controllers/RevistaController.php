@@ -25,8 +25,10 @@
 			
 			if(count($revista->errores)>0){
 				print_r($revista->errores);
+				die();
 			}
-			die();
+			$revista->inserta($revista->get_atributos());
+			
 		}
 
 	}

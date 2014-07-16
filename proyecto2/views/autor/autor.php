@@ -25,19 +25,19 @@
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Nombre autor </label>
                       <div class="col-lg-6">
-                          <input type="text" class="form-control" name="username" id="nombre" />
+                          <input type="text" class="form-control username" name="nombre" id="nombre" />
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Apellidos </label>
                       <div class="col-lg-6">
-                          <input type="text" class="form-control" name="username" id="apellidos" />
+                          <input type="text" class="form-control username" name="apellidos" id="apellidos" />
                       </div>
                   </div>
                   <div class="form-group">
                   <label class="col-lg-3 control-label">Email </label>
                       <div class="col-lg-6">
-                          <input type="text" class="form-control" name="email" placeholder="Email@algo.com" />
+                          <input type="text" class="form-control" id="email" name="email" placeholder="Email@algo.com" />
                       </div>
                   </div>
                   <br>
