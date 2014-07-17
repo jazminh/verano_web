@@ -80,7 +80,7 @@ class Equipo extends Modelo{
     }
     
     public function set_escudo($valor){
-        $this->escudo = trim($valor);
+        $this->escudo = trim($valor['name']);
     }
 
     

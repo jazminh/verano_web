@@ -8,17 +8,21 @@
   include ('../../libs/Er.php');
   include ('../layouts/header.php');
 
+
+
+
   if (isset($_POST['nombre'])){
   	
   	$equipoC=new EquipoController();
-  	$equipoC->insertaEquipo($_POST);
+  	$equipoC->insertaEquipo($_POST,$_FILES);
 
 	}
+
 
 ?>
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4">
-						<form role="form" action="" method="POST">
+						<form role="form" action="" method="POST" enctype="multipart/form-data">
 						  <div class="form-group">
 						    <label for="nombre">Registro de equipo</label>
 						    <input type="text" class="form-control" id="nombre"  name="nombre" placeholder="nombre">
@@ -43,6 +47,7 @@
 						      <input type="checkbox"> Check me out
 						    </label>
 						  </div>
+
 						  <button type="submit" class="btn btn-default">Submit</button>
 						</form>
 										
