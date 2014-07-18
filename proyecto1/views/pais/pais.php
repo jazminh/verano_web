@@ -9,17 +9,17 @@
   include ('../layouts/header.php');
 
   if (isset($_POST['nombre'])){
-  	echo "<pre>";
- 	 print_r($_POST);
-  	echo"</pre>";
+    
+    $paisC=new PaisController();
+    $paisC->insertaPais($_POST,$_FILES);
 
-	}
+  }
 
 ?>
     <div class="row">
       <h3>Formulario Pais</h3>
       <div class="col-md-6" aling="center"> 
-        <form role="form" action="" method="POST">
+        <form role="form" action="" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <label for="idcontinente">Continente: </label>
           <select class="form-control " id="idcontinente" name="idcontinente">
@@ -43,7 +43,7 @@
         </div>
 
         
-        <button type="submit" class="btn btn-default">Guardar</button>
+        <button type="submit" class="form-control">Guardar</button>
       </form>
 
 

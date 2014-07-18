@@ -63,13 +63,6 @@ class Equipo extends Modelo{
         
         if ( !$er->valida_idnum($valor) ){
             $this->errores[] = "Este id (".$valor.") no es valido";
-        }
-
-        $rs = $this->consulta_sql("select * from equipo where idpais = '$valor'");
-        $rows = $rs->GetArray();
-        
-        if(count($rows) > 0){
-            $this->errores[] = "Este id (".$valor.") ya esta registrado"; 
         }else{
             $this->idpais = trim($valor);
         }
@@ -80,8 +73,35 @@ class Equipo extends Modelo{
     }
     
     public function set_escudo($valor){
-        $this->escudo = trim($valor['name']);
+        $er = new Er();
+        
+        $intento=trim($valor['name']);
+        $tipo=trim($valor['type']);
+        $tam=trim($valor['size']);
+
+         if ($er->valida_tipo($tipo) )
+        {
+
+            if($er->valida_tam($tam)){
+
+                if ( !$er->valida_imagen($intento) ){
+                    $this->errores[] = "1: Este archivo (".$valor['name'].") no es valido";
+                }else{
+                    $this->escudo = trim($valor['name']);
+                }
+            }else{
+                $this->errores[] = "2: Este archivo (".$valor['name'].") no es valido";
+                
+                }
+        }else{
+        $this->errores[] = "3: Este archivo (".$valor['name'].") no es valido";
+        
+        }
     }
+    
+
+
+    
 
     
     

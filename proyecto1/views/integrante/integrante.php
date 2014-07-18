@@ -9,16 +9,16 @@
   include ('../layouts/header.php');
 
   if (isset($_POST['nombre'])){
-  	echo "<pre>";
- 	 print_r($_POST);
-  	echo"</pre>";
+    
+    $IntegranteC=new IntegranteController();
+    $IntegranteC->insertaIntegrante($_POST,$_FILES);
 
-	}
+  }
 
 ?>
 <div class="col-md-4 col-md-offset-4">
           <h2 align="center">Integrante</h2>
-          <form role="form" action="" method="POST">
+          <form role="form" action="" method="POST" enctype="multipart/form-data">
             <div class="form-group">
               <label for="nombre">Nombre: </label>
               <input type="text" class="form-control"  name="nombre" id="nombre" placeholder="Ej. Rafa" >
@@ -37,9 +37,20 @@
             </div>
             <div class="form-group">
               <label for="foto">Selecciona una foto:</label>
-              <input type="file" id="foto" name="foto">
+              <input type="file" class="form-control" id="foto" name="foto">
+              <label for="idcontinente">Id equipo </label>
+              <select class="form-control " id="idequipo" name="idequipo">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+
+                  
+                </select>
               
             </div>
+            <button type="submit" class="btn btn-default">Submit</button>
           </form>
 
 

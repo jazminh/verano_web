@@ -6,9 +6,11 @@
 			
 		}
 
-		public function insertaArticulo($datos){
+		public function insertaArticulo($datos,$archivo){
 			echo "<pre>";
 		 	print_r($datos);
+		 	print_r($archivo);
+
 		  	echo"</pre>";
 			$articulo = new Articulo();
 			
@@ -19,7 +21,7 @@
 		    $articulo->set_metodologia($datos['metodologia']);
 		    $articulo->set_contenido($datos['contenido']);
 		    $articulo->set_fecha_creacion($datos['fecha_creacion']);
-		    $articulo->set_archivo_pdf($datos['archivo_pdf']);
+		    $articulo->set_archivo_pdf($archivo['archivo_pdf']);
 		    $articulo->set_id_status($datos['id_status']);
 		    $articulo->set_conclusiones($datos['conclusiones']);
 		    $articulo->set_agradecimientos($datos['agradecimientos']);
@@ -28,6 +30,10 @@
 			if(count($articulo->errores)>0){
 				print_r($articulo->errores);
 				die();
+			}else{
+				move_uploaded_file($archivo['archivo_pdf']['tmp_name'],
+					"../im/".$archivo['archivo_pdf']['name']);
+
 			}
 			$articulo->inserta($articulo->get_atributos());
 

@@ -12,8 +12,9 @@
 
 
   if (isset($_POST['nombre'])){
-  	
   	$equipoC=new EquipoController();
+  	
+  	
   	$equipoC->insertaEquipo($_POST,$_FILES);
 
 	}
@@ -22,10 +23,38 @@
 ?>
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4">
+
+
+
+				<?php
+
+				//TAREA UBICAR ESE BLOQUE  EN UNA CLASE Y CONVERTIRLO EN FUNCION
+				if ($equipoC->muestra_errores) {
+
+				?>
+
+				<div class="alert alert-danger">
+					<?php
+						foreach ($equipoC->errores as $value) {
+							echo "<p>error: $value</p>";
+							
+						}
+					?>
+				</div>
+
+				<?php
+
+					
+				}
+
+				?>
+
+				
+
 						<form role="form" action="" method="POST" enctype="multipart/form-data">
 						  <div class="form-group">
 						    <label for="nombre">Registro de equipo</label>
-						    <input type="text" class="form-control" id="nombre"  name="nombre" placeholder="nombre">
+						    <input type="text" class="form-control" id="nombre"  name="nombre" placeholder="nombre" value="<?php echo $equipoC->get_nombre();?>">
 						  </div>
 						  <div class="form-group">
 						    <label for="escudo">Escudo</label>

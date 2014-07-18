@@ -11,7 +11,7 @@
   if (isset($_POST['nombre'])){
   	
   	$revistaC=new RevistaController();
-  	$revistaC->insertaRevista($_POST);
+  	$revistaC->insertaRevista($_POST,$_FILES);
 
 	}
 
@@ -19,7 +19,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-          <form class="form-horizontal registerForm" role="form" action="" method="POST">
+          <form class="form-horizontal registerForm" role="form" action="" method="POST" enctype="multipart/form-data">
             <br>
                 <h3 >Revista</h3>
             <br>
@@ -32,7 +32,7 @@
                                       <div class="form-group">
                                             <label class="col-lg-3 control-label">Portada </label>
                                             <div class="col-lg-6">
-                                                <input type="file" id="portada" name="portada"  />
+                                                <input type="file" class="form-control" id="portada" name="portada"  />
                                             </div>
                                       </div>
                                       <div class="form-group">

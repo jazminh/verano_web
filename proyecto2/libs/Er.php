@@ -1,6 +1,68 @@
 <?php
 
 class Er {
+
+	public function valida_tipo($valor)
+	{	
+		
+        if ((($valor== "image/gif")
+        || ($valor== "image/jpeg")
+        || ($valor == "image/jpg")
+        || ($valor == "image/pjpeg")
+        || ($valor == "image/x-png")
+        || ($valor == "image/png")))
+        {
+        return true;
+		}else{
+		return false;
+		}
+	}
+
+
+	public function valida_tam($valor)
+	{	
+		if ($valor < 200000)//bits
+        {
+        return true;
+		}else{
+		return false;
+		}
+	}
+
+	public function valida_pdfnombre($valor){
+		
+		$exp_reg="/^([_a-z0-9-])*+(\.){1}((pdf){1})$/";
+		if (preg_match($exp_reg, $valor)) {
+		     return true;
+		} else { 
+		     return false;
+		}
+
+	}
+
+	public function valida_pdf($valor)
+	{	
+		
+
+        if ($valor== "application/pdf")
+        
+        {
+        return true;
+		}else{
+		return false;
+		}
+	}
+
+	public function valida_imagen($valor){
+		
+		$exp_reg="/^([_a-z0-9-])*+(\.){1}((jpg|png|gif){1})$/";
+		if (preg_match($exp_reg, $valor)) {
+		     return true;
+		} else { 
+		     return false;
+		}
+
+	}
     
 	public function valida_email($valor){
 		$exp_reg = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/'; 

@@ -11,14 +11,14 @@
   if (isset($_POST['nombre'])){
   	
   	$articuloC=new ArticuloController();
-  	$articuloC->insertaArticulo($_POST);
+  	$articuloC->insertaArticulo($_POST,$_FILES);
 
 	}
 
 ?>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-          <form class="form-horizontal registerForm" role="form" action="" method="POST">
+          <form class="form-horizontal registerForm" role="form" action="" method="POST" enctype="multipart/form-data">
             <br>
                 <h3>Articulo</h3>
             <br>
@@ -72,7 +72,7 @@
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Archivo (pdf)  </label>
                       <div class="col-lg-6">
-                      <input type="file" id="archivo_pdf" name="archivo_pdf">
+                      <input type="file" class="form-control" id="archivo_pdf" name="archivo_pdf">
                       </div>
                   </div>
                   <div class="form-group">
