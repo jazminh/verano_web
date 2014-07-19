@@ -1,8 +1,11 @@
 
 		<div class="row">
 			<li><a href="">Gira del trofeo</a></li>
+            <p>
+            <pre><?php print_r($_SESSION); ?></pre>
 				
 			</div>
+            </p>
 	</div>
 </div>
 

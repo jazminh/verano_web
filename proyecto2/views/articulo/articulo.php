@@ -8,16 +8,22 @@
   include ('../../libs/Er.php');
   include ('../layouts/header.php');
 
+  $variableC=new ArticuloController();
+
   if (isset($_POST['nombre'])){
   	
-  	$articuloC=new ArticuloController();
-  	$articuloC->insertaArticulo($_POST,$_FILES);
+  	
+  	$variableC->insertaArticulo($_POST,$_FILES);
 
 	}
 
 ?>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+    <?php
+ include ('../../libs/funcion.php');
+ ?>
+
           <form class="form-horizontal registerForm" role="form" action="" method="POST" enctype="multipart/form-data">
             <br>
                 <h3>Articulo</h3>
@@ -25,25 +31,29 @@
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Nombre articulo </label>
                       <div class="col-lg-6">
-                          <input type="text" class="form-control username" name="nombre" id="nombre" />
+                          <input type="text" id="nombre" name="nombre" class="form-control" value="
+                          <?php echo $variableC->get_nombre(); ?>">
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Resumen </label>
                       <div class="col-lg-6">
-                          <textarea type="text" class="form-control" name="resumen" id="resumen" ></textarea>
+                          <textarea  type="text" id="resumen" name="resumen" value="
+                          <?php echo $variableC->get_resumen();?>" class="form-control">
+                          </textarea>
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Abstract </label>
                       <div class="col-lg-6">
-                          <textarea type="text" class="form-control" name="abstract" id="abstract" ></textarea>
+                          <textarea type="text" id="abstract" name="abstract" class="form-control" >
+                          </textarea>
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Introduccion </label>
                       <div class="col-lg-6">
-                          <textarea type="text" class="form-control" name="introduccion" id="introduccion" ></textarea>
+                          <textarea type="text" class="form-control" name="introduccion" id="introduccion" > </textarea>
                       </div>
                   </div>
                   <div class="form-group">
@@ -62,7 +72,8 @@
                       <label class="col-lg-3 control-label">Fecha creacion  </label>
                       <div class="col-lg-6">
                       <div class='input-group date' id='datetimepicker1'>
-                          <input type='text' class="form-control" id="fecha_creacion" name="fecha_creacion"/>
+                          <input type='text' class="form-control" id="fecha_creacion" name="fecha_creacion" value="
+                          <?php echo $variableC->get_fecha_creacion();?>"/>
                           <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span>
                           </span>
                       </div>
@@ -96,13 +107,15 @@
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Agradecimientos </label>
                       <div class="col-lg-6">
-                          <input type="text" class="form-control" name="agradecimientos" id="agradecimientos" />
+                          <input type="text" class="form-control" name="agradecimientos" id="agradecimientos" value="
+                          <?php echo $variableC->get_agradecimientos(); ?>" />
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Referencias  </label>
                       <div class="col-lg-6">
-                          <input type="text" class="form-control" name="referencias" id="referencias" />
+                          <input type="text" class="form-control" name="referencias" id="referencias" value="
+                          <?php echo $variableC->get_referencias(); ?>" />
                       </div>
                   </div>
                   <button type="submit" class="btn btn-default">Guardar</button>

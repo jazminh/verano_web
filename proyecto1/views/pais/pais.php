@@ -1,4 +1,5 @@
 <?php 
+  include ('../../libs/security.php');
   include ('../../libs/adodb5/adodb-pager.inc.php');
   include ('../../libs/adodb5/adodb.inc.php');
   include ('../../models/Conexion.php');
@@ -8,10 +9,12 @@
   include ('../../libs/Er.php');
   include ('../layouts/header.php');
 
+
+$variableC=new PaisController();
   if (isset($_POST['nombre'])){
     
-    $paisC=new PaisController();
-    $paisC->insertaPais($_POST,$_FILES);
+    
+    $variableC->insertaPais($_POST,$_FILES);
 
   }
 
@@ -19,6 +22,12 @@
     <div class="row">
       <h3>Formulario Pais</h3>
       <div class="col-md-6" aling="center"> 
+
+<?php
+ include ('../../libs/funcion.php');
+ ?>
+
+
         <form role="form" action="" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <label for="idcontinente">Continente: </label>
@@ -33,7 +42,7 @@
         </div>
         <div class="form-group">
           <label for="nombre">Pa&iacute;s: </label>
-          <input type="text" class="form-control"  name="nombre" id="nombre" placeholder="Ej. M&eacute;xico" >
+          <input type="text" class="form-control"  name="nombre" id="nombre" placeholder="Ej. M&eacute;xico" value="<?php echo $variableC->get_nombre();?>" >
         </div>
         
         <div class="form-group">

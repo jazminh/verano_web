@@ -1,4 +1,5 @@
 <?php 
+  include ('../../libs/security.php');
   include ('../../libs/adodb5/adodb-pager.inc.php');
   include ('../../libs/adodb5/adodb.inc.php');
   include ('../../models/Conexion.php');
@@ -6,70 +7,46 @@
   include ('../../models/Equipo.php');
   include ('../../controllers/EquipoController.php');
   include ('../../libs/Er.php');
+
+ 
   include ('../layouts/header.php');
 
 
-
+$variableC=new EquipoController();
 
   if (isset($_POST['nombre'])){
-  	$equipoC=new EquipoController();
   	
   	
-  	$equipoC->insertaEquipo($_POST,$_FILES);
+  	
+  	$variableC->insertaEquipo($_POST,$_FILES);
 
 	}
+
+
 
 
 ?>
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4">
 
-
-
-				<?php
-
-				//TAREA UBICAR ESE BLOQUE  EN UNA CLASE Y CONVERTIRLO EN FUNCION
-				if ($equipoC->muestra_errores) {
-
-				?>
-
-				<div class="alert alert-danger">
-					<?php
-						foreach ($equipoC->errores as $value) {
-							echo "<p>error: $value</p>";
-							
-						}
-					?>
-				</div>
-
-				<?php
-
-					
-				}
-
-				?>
+<?php
+ include ('../../libs/funcion.php');
+ ?>
 
 				
 
 						<form role="form" action="" method="POST" enctype="multipart/form-data">
 						  <div class="form-group">
 						    <label for="nombre">Registro de equipo</label>
-						    <input type="text" class="form-control" id="nombre"  name="nombre" placeholder="nombre" value="<?php echo $equipoC->get_nombre();?>">
+						    <input type="text" class="form-control" id="nombre"  name="nombre" placeholder="nombre" value="<?php echo $variableC->get_nombre();?>">
 						  </div>
 						  <div class="form-group">
 						    <label for="escudo">Escudo</label>
 						    <input type="file" class="form-control" id="escudo" name="escudo" placeholder="escudo">
 						  </div>
 						  <div class="form-group">
-						   	<select class="form-control " id="idpais" name="idpais">
-						   		<option value="1">1</option>
-						   		<option value="2">2</option>
-						   		<option value="3">3</option>
-						   		<option value="4">4</option>
-						   		<option value="5">5</option>
-
-						   		
-						   	</select>
+						  	<label for="pais">pais</label>
+						   	<?php echo $variableC->getDropDown('pais','idpais','idpais'); ?>
 						  </div>
 						  <div class="checkbox">
 						    <label>
@@ -79,6 +56,10 @@
 
 						  <button type="submit" class="btn btn-default">Submit</button>
 						</form>
+
+						<div class="col-md-6">
+							<?php $variableC->show_grid(); ?>
+						</div>
 										
 			</div>
 			

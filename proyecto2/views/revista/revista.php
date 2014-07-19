@@ -8,10 +8,11 @@
   include ('../../libs/Er.php');
   include ('../layouts/header.php');
 
+  $variableC=new RevistaController();
   if (isset($_POST['nombre'])){
   	
-  	$revistaC=new RevistaController();
-  	$revistaC->insertaRevista($_POST,$_FILES);
+  	
+  	$variableC->insertaRevista($_POST,$_FILES);
 
 	}
 
@@ -20,13 +21,17 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
           <form class="form-horizontal registerForm" role="form" action="" method="POST" enctype="multipart/form-data">
+            <?php
+ include ('../../libs/funcion.php');
+ ?>
             <br>
                 <h3 >Revista</h3>
             <br>
                                       <div class="form-group">
                                             <label class="col-lg-3 control-label">Nombre revista </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control username"  name="nombre" id="nombre" />
+                                                <input type="text" class="form-control username"  name="nombre" id="nombre" value="
+                          <?php echo $variableC->get_nombre(); ?>"/>
                                             </div>
                                       </div>
                                       <div class="form-group">
@@ -40,7 +45,8 @@
                                             <div class="col-lg-6">
                                             
                                               <div class='input-group date' id='datetimepicker1'>
-                                                  <input type='text' class="form-control" name="fecha" id="fecha"/>
+                                                  <input type='text' class="form-control" name="fecha" id="fecha" value="
+                          <?php echo $variableC->get_fecha(); ?>"/>
                                                   <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                                                   </span>
                                               </div>
@@ -50,34 +56,40 @@
                                       <div class="form-group">
                                             <label class="col-lg-3 control-label">Volumen </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control username" name="volumen" id="volumen" />
+                                                <input type="text" class="form-control username" name="volumen" id="volumen" value="
+                          <?php echo $variableC->get_volumen(); ?>"/>
                                             </div>
                                       </div>
                                       <div class="form-group">
                                             <label class="col-lg-3 control-label">Titulo </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control username" name="titulo" id="titulo" />
+                                                <input type="text" class="form-control username" name="titulo" id="titulo" value="
+                          <?php echo $variableC->get_titulo(); ?>"/>
                                             </div>
 
                                       </div>
                                       <div class="form-group">
                                             <label class="col-lg-3 control-label">Subtitulo </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control username" name="subtitulo" id="subtitulo" />
+                                                <input type="text" class="form-control username" name="subtitulo" id="subtitulo" 
+                                                value="
+                          <?php echo $variableC->get_subtitulo(); ?>"/>
                                             </div>
                                             
                                       </div>
                                       <div class="form-group">
                                             <label class="col-lg-3 control-label">Numero </label>
                                             <div class="col-lg-3">
-                                                <input type="text" class="form-control" name="numero" id="numero" />
+                                                <input type="text" class="form-control" name="numero" id="numero" value="
+                          <?php echo $variableC->get_numero(); ?>"/>
                                             </div>
                                             
                                       </div>
                                       <div class="form-group">
                                             <label class="col-lg-3 control-label">Clave </label>
                                             <div class="col-lg-4">
-                                                <input type="text" class="form-control username" name="clave" id="clave" />
+                                                <input type="text" class="form-control username" name="clave" id="clave" value="
+                          <?php echo $variableC->get_clave(); ?>"/>
                                             </div>
                                             
                                       </div>

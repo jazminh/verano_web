@@ -36,9 +36,15 @@
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
+        <?php if( !isset($_SESSION['user']) ){?>
         <li>
-          <a href="#">Getting started</a>
+          <a href="<?php echo BASEURL;?>/views/site/login.php">Login</a>
         </li>
+        <?php }else{ ?>
+        <li>
+          <a href="<?php echo BASEURL;?>/views/site/logout.php">Logout</a>
+        </li>
+        <?php } ?>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formularios <b class="caret"></b></a>
           <ul class="dropdown-menu">
@@ -51,13 +57,13 @@
             <li><a href="../posicion/posicion.php">Posicion</a></li>
           </ul>
         </li>
-            <li><a href="../equipo/equipo.php">Equipo</a></li>
-            <li><a href="../estadio/estadio.php">Estadio</a></li>
-            <li><a href="../ciudad/ciudad.php">Ciudad</a></li>
-            <li><a href="../continente/continente.php">Continente</a></li>
-            <li><a href="../pais/pais.php">Pais</a></li>
-            <li><a href="../integrante/integrante.php">Integrante</a></li>
-            <li><a href="../posicion/posicion.php">Posicion</a></li>
+            <li><a href="<?php echo BASEURL;?>/views/equipo/equipo.php">Equipo</a></li>
+            <li><a href="<?php echo BASEURL;?>/views/estadio/estadio.php">Estadio</a></li>
+            <li><a href="<?php echo BASEURL;?>/views/ciudad/ciudad.php">Ciudad</a></li>
+            <li><a href="<?php echo BASEURL;?>/views/continente/continente.php">Continente</a></li>
+            <li><a href="<?php echo BASEURL;?>/views/pais/pais.php">Pais</a></li>
+            <li><a href="<?php echo BASEURL;?>/views/integrante/integrante.php">Integrante</a></li>
+            <li><a href="<?php echo BASEURL;?>/views/posicion/posicion.php">Posicion</a></li>
       </ul>
     </nav>
   </div>
