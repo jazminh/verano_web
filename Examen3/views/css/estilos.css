@@ -1,0 +1,10 @@
+body {
+	background-color: #00CACA;
+}
+.fondo{
+  background-image: url("../img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: %100 auto;
+  background-attachment: fixed;
+  background-position:top center;
+}

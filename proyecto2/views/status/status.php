@@ -1,4 +1,5 @@
 <?php 
+  include ('../../libs/security.php');
   include ('../../libs/adodb5/adodb-pager.inc.php');
   include ('../../libs/adodb5/adodb.inc.php');
   include ('../../models/Conexion.php');
@@ -7,10 +8,10 @@
   include ('../../controllers/StatusController.php');
   include ('../../libs/Er.php');
   include ('../layouts/header.php');
-
+  $statusC=new StatusController();
   if (isset($_POST['status'])){
   	
-  	$statusC=new StatusController();
+  	
   	$statusC->insertaStatus($_POST);
 
 	}

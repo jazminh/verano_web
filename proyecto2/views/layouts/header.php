@@ -47,19 +47,28 @@
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
+        <?php if( !isset($_SESSION['user']) ){?>
+        <li>
+          <a href="<?php echo BASEURL;?>/views/site/login.php">Login</a>
+        </li>
+        <?php }else{ ?>
+        <li>
+          <a href="<?php echo BASEURL;?>/views/site/logout.php">Logout</a>
+        </li>
+        <?php } ?>
         
         
         <li>
-          <a href="../articulo/articulo.php"><span class="glyphicon glyphicon-list-alt"></span> Articulo</a>
+          <a href="<?php echo BASEURL;?>/views/articulo/articulo.php"><span class="glyphicon glyphicon-list-alt"></span> Articulo</a>
         </li>
         <li>
-          <a href="../autor/autor.php"><span class="glyphicon glyphicon-list-alt"></span> Autor</a>
+          <a href="<?php echo BASEURL;?>/views/autor/autor.php"><span class="glyphicon glyphicon-list-alt"></span> Autor</a>
         </li>
         <li>
-          <a href="../revista/revista.php"><span class="glyphicon glyphicon-list-alt"></span> Revista</a>
+          <a href="<?php echo BASEURL;?>/views/revista/revista.php"><span class="glyphicon glyphicon-list-alt"></span> Revista</a>
         </li>
         <li>
-          <a href="../status/status.php"><span class="glyphicon glyphicon-list-alt"></span> Status</a>
+          <a href="<?php echo BASEURL;?>/views/status/status.php"><span class="glyphicon glyphicon-list-alt"></span> Status</a>
         </li>
       </ul>
     </nav>
